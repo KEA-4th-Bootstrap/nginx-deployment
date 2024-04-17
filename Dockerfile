@@ -1,12 +1,9 @@
 # 기반 이미지 설정
-FROM nginx:latest
+FROM nginx:1.21  # 안정적인 특정 버전 사용
 
-# nginx의 기본 index.html 파일 제거
+# nginx의 기본 index.html 파일 제거 및 여러 파일 복사
 RUN rm /usr/share/nginx/html/index.html
-
-# 호스트 머신의 index.html 파일을 컨테이너로 복사
-COPY index.html /usr/share/nginx/html/index.html
-COPY kaj-puppy.jpeg /usr/share/nginx/html/kaj-puppy.jpeg
+COPY index.html kaj-puppy.jpeg /usr/share/nginx/html/
 
 # 포트 80 오픈
 EXPOSE 80
