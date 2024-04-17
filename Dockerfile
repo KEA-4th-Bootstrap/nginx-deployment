@@ -1,5 +1,5 @@
 # 기반 이미지 설정
-FROM nginx:1.21  # 안정적인 특정 버전 사용
+FROM nginx:nginx:1.14.2
 
 # nginx의 기본 index.html 파일 제거 및 여러 파일 복사
 RUN rm /usr/share/nginx/html/index.html
